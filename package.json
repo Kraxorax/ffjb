@@ -1,0 +1,20 @@
+{
+  "name": "jukebox",
+  "version": "0.0.1",
+  "description": "tuc tuc $ tuc $$ tuc $ tuc $$ tuc tuc",
+  "main": "entry_point.js",
+  "scripts": {
+    "test": "disgusting-test-plebs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "C:/HAKLAB/jukebox/.git/"
+  },
+  "keywords": [
+    "vords",
+    "ti",
+    "kinem"
+  ],
+  "author": "ff",
+  "license": "ISC"
+}
