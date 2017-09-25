@@ -1,7 +1,0 @@
-CREATE SCHEMA core;
-
-ALTER TABLE dj SET SCHEMA core;
-ALTER TABLE playlist SET SCHEMA core;
-ALTER TABLE venue SET SCHEMA core;
-ALTER TABLE song SET SCHEMA core;
-ALTER TABLE playlist_songs SET SCHEMA core;
