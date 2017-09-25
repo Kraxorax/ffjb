@@ -1,0 +1,126 @@
+
+
+Just some examples of working queries, may be too old and unupdated.
+
+
+-- all venues and songs
+{
+	allVenues {
+		edges {
+			node {
+				name
+				playlist: playlistByPlaylist {
+					title
+					songs: playlistSongsByPlaylistId {
+            edges {
+              node {
+                songBySongId {
+                  title
+                }
+              }
+            }
+          }
+				}
+			}
+		}
+	}
+}
+
+-- makes a song entry, returns title
+mutation
+{
+	createSong(input: {
+		song: {
+			title: "MARINA AND THE DIAMONDS | FROOT",
+			url: "https://www.youtube.com/watch?v=WZzcY7ASQno"
+		}
+	})
+	{
+		song {
+			title
+		}
+	}
+}
+
+-- makes a new dj, returns his nick
+mutation
+{
+  createDj(input: { 
+    dj: { 
+      nick: "nipple",
+      email: "nipple@email.com",
+      pass: "nnn"
+    }
+  }) 
+  {
+    dj {
+      nick
+    }
+  }
+}
+
+-- makes venue without playlist
+mutation
+{
+  createVenue(input: { 
+    venue: { 
+      name: "kod murte"
+    }
+  }) 
+  {
+    venue {
+      name
+    }
+  }
+}
+
+-- changes playlist of a venue
+mutation
+{
+  updateVenue(input: {
+    nodeId: "WyJ2ZW51ZXMiLDJd"
+    venuePatch: {
+      playlist: 1
+    }
+  })
+  {
+    playlistByPlaylist {
+      title
+    }
+  }
+}
+
+-- makes a new playlist
+mutation
+{
+  createPlaylist(input: {
+    playlist: {
+      title: "Drugenci"
+    }
+  })
+  {
+    playlist {
+      title
+    }
+  }
+}
+
+-- adds song to playlist
+mutation
+{
+  createPlaylistSong(input: {
+    playlistSong: {
+      playlistId: 2,
+    	songId: 6
+    }
+  })
+  {
+    playlist: playlistByPlaylistId {
+      title
+    },
+    song: songBySongId {
+      title,
+      url
+    }
+  }
+}
