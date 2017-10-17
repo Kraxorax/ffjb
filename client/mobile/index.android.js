@@ -13,7 +13,7 @@ import {
 	View
 } from 'react-native';
 
-import RootContainer from 'src'
+import RootContainer from './src/RootContainer.js'
 
 
 

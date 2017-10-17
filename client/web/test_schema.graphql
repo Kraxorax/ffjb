@@ -1,0 +1,1343 @@
+# All input for the `createDj` mutation.
+input CreateDjInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+
+  # The `Dj` to be created by this mutation.
+  dj: DjInput!
+}
+
+# The output of our `createDj` mutation.
+type CreateDjPayload {
+  # The exact same `clientMutationId` that was provided in the mutation input,
+  # unchanged and unused. May be used by a client to track mutations.
+  clientMutationId: String
+
+  # The `Dj` that was created by this mutation.
+  dj: Dj
+
+  # An edge for our `Dj`. May be used by Relay 1.
+  djEdge(
+    # The method to use when ordering `Dj`.
+    orderBy: DjsOrderBy = PRIMARY_KEY_ASC
+  ): DjsEdge
+
+  # Our root query field type. Allows us to run any query from our mutation payload.
+  query: Query
+}
+
+# All input for the `createPlaylist` mutation.
+input CreatePlaylistInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+
+  # The `Playlist` to be created by this mutation.
+  playlist: PlaylistInput!
+}
+
+# The output of our `createPlaylist` mutation.
+type CreatePlaylistPayload {
+  # The exact same `clientMutationId` that was provided in the mutation input,
+  # unchanged and unused. May be used by a client to track mutations.
+  clientMutationId: String
+
+  # The `Playlist` that was created by this mutation.
+  playlist: Playlist
+
+  # An edge for our `Playlist`. May be used by Relay 1.
+  playlistEdge(
+    # The method to use when ordering `Playlist`.
+    orderBy: PlaylistsOrderBy = PRIMARY_KEY_ASC
+  ): PlaylistsEdge
+
+  # Our root query field type. Allows us to run any query from our mutation payload.
+  query: Query
+}
+
+# All input for the `createPlaylistSong` mutation.
+input CreatePlaylistSongInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+
+  # The `PlaylistSong` to be created by this mutation.
+  playlistSong: PlaylistSongInput!
+}
+
+# The output of our `createPlaylistSong` mutation.
+type CreatePlaylistSongPayload {
+  # The exact same `clientMutationId` that was provided in the mutation input,
+  # unchanged and unused. May be used by a client to track mutations.
+  clientMutationId: String
+
+  # The `PlaylistSong` that was created by this mutation.
+  playlistSong: PlaylistSong
+
+  # An edge for our `PlaylistSong`. May be used by Relay 1.
+  playlistSongEdge(
+    # The method to use when ordering `PlaylistSong`.
+    orderBy: PlaylistSongsOrderBy = PRIMARY_KEY_ASC
+  ): PlaylistSongsEdge
+
+  # Reads a single `Playlist` that is related to this `PlaylistSong`.
+  playlistByPlaylistId: Playlist
+
+  # Reads a single `Song` that is related to this `PlaylistSong`.
+  songBySongId: Song
+
+  # Our root query field type. Allows us to run any query from our mutation payload.
+  query: Query
+}
+
+# All input for the `createSong` mutation.
+input CreateSongInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+
+  # The `Song` to be created by this mutation.
+  song: SongInput!
+}
+
+# The output of our `createSong` mutation.
+type CreateSongPayload {
+  # The exact same `clientMutationId` that was provided in the mutation input,
+  # unchanged and unused. May be used by a client to track mutations.
+  clientMutationId: String
+
+  # The `Song` that was created by this mutation.
+  song: Song
+
+  # An edge for our `Song`. May be used by Relay 1.
+  songEdge(
+    # The method to use when ordering `Song`.
+    orderBy: SongsOrderBy = PRIMARY_KEY_ASC
+  ): SongsEdge
+
+  # Our root query field type. Allows us to run any query from our mutation payload.
+  query: Query
+}
+
+# All input for the `createVenue` mutation.
+input CreateVenueInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+
+  # The `Venue` to be created by this mutation.
+  venue: VenueInput!
+}
+
+# The output of our `createVenue` mutation.
+type CreateVenuePayload {
+  # The exact same `clientMutationId` that was provided in the mutation input,
+  # unchanged and unused. May be used by a client to track mutations.
+  clientMutationId: String
+
+  # The `Venue` that was created by this mutation.
+  venue: Venue
+
+  # An edge for our `Venue`. May be used by Relay 1.
+  venueEdge(
+    # The method to use when ordering `Venue`.
+    orderBy: VenuesOrderBy = PRIMARY_KEY_ASC
+  ): VenuesEdge
+
+  # Reads a single `Playlist` that is related to this `Venue`.
+  playlistByPlaylist: Playlist
+
+  # Our root query field type. Allows us to run any query from our mutation payload.
+  query: Query
+}
+
+# A location in a connection that can be used for resuming pagination.
+scalar Cursor
+
+# All input for the `deleteDjByEmail` mutation.
+input DeleteDjByEmailInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+  email: String!
+}
+
+# All input for the `deleteDjById` mutation.
+input DeleteDjByIdInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+  id: Int!
+}
+
+# All input for the `deleteDjByNick` mutation.
+input DeleteDjByNickInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+  nick: String!
+}
+
+# All input for the `deleteDj` mutation.
+input DeleteDjInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+
+  # The globally unique `ID` which will identify a single `Dj` to be deleted.
+  nodeId: ID!
+}
+
+# The output of our `deleteDj` mutation.
+type DeleteDjPayload {
+  # The exact same `clientMutationId` that was provided in the mutation input,
+  # unchanged and unused. May be used by a client to track mutations.
+  clientMutationId: String
+  dj: Dj
+  deletedDjId: ID
+
+  # Our root query field type. Allows us to run any query from our mutation payload.
+  query: Query
+}
+
+# All input for the `deletePlaylistById` mutation.
+input DeletePlaylistByIdInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+  id: Int!
+}
+
+# All input for the `deletePlaylist` mutation.
+input DeletePlaylistInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+
+  # The globally unique `ID` which will identify a single `Playlist` to be deleted.
+  nodeId: ID!
+}
+
+# The output of our `deletePlaylist` mutation.
+type DeletePlaylistPayload {
+  # The exact same `clientMutationId` that was provided in the mutation input,
+  # unchanged and unused. May be used by a client to track mutations.
+  clientMutationId: String
+  playlist: Playlist
+  deletedPlaylistId: ID
+
+  # Our root query field type. Allows us to run any query from our mutation payload.
+  query: Query
+}
+
+# All input for the `deletePlaylistSongByPlaylistIdAndSongId` mutation.
+input DeletePlaylistSongByPlaylistIdAndSongIdInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+  playlistId: Int!
+  songId: Int!
+}
+
+# All input for the `deletePlaylistSong` mutation.
+input DeletePlaylistSongInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+
+  # The globally unique `ID` which will identify a single `PlaylistSong` to be deleted.
+  nodeId: ID!
+}
+
+# The output of our `deletePlaylistSong` mutation.
+type DeletePlaylistSongPayload {
+  # The exact same `clientMutationId` that was provided in the mutation input,
+  # unchanged and unused. May be used by a client to track mutations.
+  clientMutationId: String
+  playlistSong: PlaylistSong
+  deletedPlaylistSongId: ID
+
+  # Reads a single `Playlist` that is related to this `PlaylistSong`.
+  playlistByPlaylistId: Playlist
+
+  # Reads a single `Song` that is related to this `PlaylistSong`.
+  songBySongId: Song
+
+  # Our root query field type. Allows us to run any query from our mutation payload.
+  query: Query
+}
+
+# All input for the `deleteSongById` mutation.
+input DeleteSongByIdInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+  id: Int!
+}
+
+# All input for the `deleteSong` mutation.
+input DeleteSongInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+
+  # The globally unique `ID` which will identify a single `Song` to be deleted.
+  nodeId: ID!
+}
+
+# The output of our `deleteSong` mutation.
+type DeleteSongPayload {
+  # The exact same `clientMutationId` that was provided in the mutation input,
+  # unchanged and unused. May be used by a client to track mutations.
+  clientMutationId: String
+  song: Song
+  deletedSongId: ID
+
+  # Our root query field type. Allows us to run any query from our mutation payload.
+  query: Query
+}
+
+# All input for the `deleteVenueById` mutation.
+input DeleteVenueByIdInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+  id: Int!
+}
+
+# All input for the `deleteVenue` mutation.
+input DeleteVenueInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+
+  # The globally unique `ID` which will identify a single `Venue` to be deleted.
+  nodeId: ID!
+}
+
+# The output of our `deleteVenue` mutation.
+type DeleteVenuePayload {
+  # The exact same `clientMutationId` that was provided in the mutation input,
+  # unchanged and unused. May be used by a client to track mutations.
+  clientMutationId: String
+  venue: Venue
+  deletedVenueId: ID
+
+  # Reads a single `Playlist` that is related to this `Venue`.
+  playlistByPlaylist: Playlist
+
+  # Our root query field type. Allows us to run any query from our mutation payload.
+  query: Query
+}
+
+type Dj implements Node {
+  # A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  nodeId: ID!
+  id: Int!
+  nick: String!
+  email: String!
+  pass: String!
+}
+
+# A condition to be used against `Dj` object types. All fields are tested for equality and combined with a logical ‘and.’
+input DjCondition {
+  # Checks for equality with the object’s `id` field.
+  id: Int
+
+  # Checks for equality with the object’s `nick` field.
+  nick: String
+
+  # Checks for equality with the object’s `email` field.
+  email: String
+
+  # Checks for equality with the object’s `pass` field.
+  pass: String
+}
+
+input DjInput {
+  id: Int
+  nick: String!
+  email: String!
+  pass: String!
+}
+
+# Represents an update to a `Dj`. Fields that are set will be updated.
+input DjPatch {
+  id: Int
+  nick: String
+  email: String
+  pass: String
+}
+
+# A connection to a list of `Dj` values.
+type DjsConnection {
+  # Information to aid in pagination.
+  pageInfo: PageInfo!
+
+  # The count of *all* `Dj` you could get from the connection.
+  totalCount: Int
+
+  # A list of edges which contains the `Dj` and cursor to aid in pagination.
+  edges: [DjsEdge]
+
+  # A list of `Dj` objects.
+  nodes: [Dj!]
+}
+
+# A `Dj` edge in the connection.
+type DjsEdge {
+  # A cursor for use in pagination.
+  cursor: Cursor
+
+  # The `Dj` at the end of the edge.
+  node: Dj!
+}
+
+# Methods to use when ordering `Dj`.
+enum DjsOrderBy {
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+  NATURAL
+  ID_ASC
+  ID_DESC
+  NICK_ASC
+  NICK_DESC
+  EMAIL_ASC
+  EMAIL_DESC
+  PASS_ASC
+  PASS_DESC
+}
+
+# The root mutation type which contains root level fields which mutate data.
+type Mutation {
+  # Creates a single `Dj`.
+  createDj(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: CreateDjInput!
+  ): CreateDjPayload
+
+  # Updates a single `Dj` using its globally unique id and a patch.
+  updateDj(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: UpdateDjInput!
+  ): UpdateDjPayload
+
+  # Updates a single `Dj` using a unique key and a patch.
+  updateDjById(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: UpdateDjByIdInput!
+  ): UpdateDjPayload
+
+  # Updates a single `Dj` using a unique key and a patch.
+  updateDjByNick(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: UpdateDjByNickInput!
+  ): UpdateDjPayload
+
+  # Updates a single `Dj` using a unique key and a patch.
+  updateDjByEmail(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: UpdateDjByEmailInput!
+  ): UpdateDjPayload
+
+  # Deletes a single `Dj` using its globally unique id.
+  deleteDj(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: DeleteDjInput!
+  ): DeleteDjPayload
+
+  # Deletes a single `Dj` using a unique key.
+  deleteDjById(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: DeleteDjByIdInput!
+  ): DeleteDjPayload
+
+  # Deletes a single `Dj` using a unique key.
+  deleteDjByNick(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: DeleteDjByNickInput!
+  ): DeleteDjPayload
+
+  # Deletes a single `Dj` using a unique key.
+  deleteDjByEmail(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: DeleteDjByEmailInput!
+  ): DeleteDjPayload
+
+  # Creates a single `Playlist`.
+  createPlaylist(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: CreatePlaylistInput!
+  ): CreatePlaylistPayload
+
+  # Updates a single `Playlist` using its globally unique id and a patch.
+  updatePlaylist(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: UpdatePlaylistInput!
+  ): UpdatePlaylistPayload
+
+  # Updates a single `Playlist` using a unique key and a patch.
+  updatePlaylistById(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: UpdatePlaylistByIdInput!
+  ): UpdatePlaylistPayload
+
+  # Deletes a single `Playlist` using its globally unique id.
+  deletePlaylist(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: DeletePlaylistInput!
+  ): DeletePlaylistPayload
+
+  # Deletes a single `Playlist` using a unique key.
+  deletePlaylistById(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: DeletePlaylistByIdInput!
+  ): DeletePlaylistPayload
+
+  # Creates a single `PlaylistSong`.
+  createPlaylistSong(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: CreatePlaylistSongInput!
+  ): CreatePlaylistSongPayload
+
+  # Updates a single `PlaylistSong` using its globally unique id and a patch.
+  updatePlaylistSong(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: UpdatePlaylistSongInput!
+  ): UpdatePlaylistSongPayload
+
+  # Updates a single `PlaylistSong` using a unique key and a patch.
+  updatePlaylistSongByPlaylistIdAndSongId(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: UpdatePlaylistSongByPlaylistIdAndSongIdInput!
+  ): UpdatePlaylistSongPayload
+
+  # Deletes a single `PlaylistSong` using its globally unique id.
+  deletePlaylistSong(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: DeletePlaylistSongInput!
+  ): DeletePlaylistSongPayload
+
+  # Deletes a single `PlaylistSong` using a unique key.
+  deletePlaylistSongByPlaylistIdAndSongId(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: DeletePlaylistSongByPlaylistIdAndSongIdInput!
+  ): DeletePlaylistSongPayload
+
+  # Creates a single `Song`.
+  createSong(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: CreateSongInput!
+  ): CreateSongPayload
+
+  # Updates a single `Song` using its globally unique id and a patch.
+  updateSong(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: UpdateSongInput!
+  ): UpdateSongPayload
+
+  # Updates a single `Song` using a unique key and a patch.
+  updateSongById(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: UpdateSongByIdInput!
+  ): UpdateSongPayload
+
+  # Deletes a single `Song` using its globally unique id.
+  deleteSong(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: DeleteSongInput!
+  ): DeleteSongPayload
+
+  # Deletes a single `Song` using a unique key.
+  deleteSongById(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: DeleteSongByIdInput!
+  ): DeleteSongPayload
+
+  # Creates a single `Venue`.
+  createVenue(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: CreateVenueInput!
+  ): CreateVenuePayload
+
+  # Updates a single `Venue` using its globally unique id and a patch.
+  updateVenue(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: UpdateVenueInput!
+  ): UpdateVenuePayload
+
+  # Updates a single `Venue` using a unique key and a patch.
+  updateVenueById(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: UpdateVenueByIdInput!
+  ): UpdateVenuePayload
+
+  # Deletes a single `Venue` using its globally unique id.
+  deleteVenue(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: DeleteVenueInput!
+  ): DeleteVenuePayload
+
+  # Deletes a single `Venue` using a unique key.
+  deleteVenueById(
+    # The exclusive input argument for this mutation. An object type, make sure to see documentation for this object’s fields.
+    input: DeleteVenueByIdInput!
+  ): DeleteVenuePayload
+}
+
+# An object with a globally unique `ID`.
+interface Node {
+  # A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  nodeId: ID!
+}
+
+# Information about pagination in a connection.
+type PageInfo {
+  # When paginating forwards, are there more items?
+  hasNextPage: Boolean!
+
+  # When paginating backwards, are there more items?
+  hasPreviousPage: Boolean!
+
+  # When paginating backwards, the cursor to continue.
+  startCursor: Cursor
+
+  # When paginating forwards, the cursor to continue.
+  endCursor: Cursor
+}
+
+type Playlist implements Node {
+  # A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  nodeId: ID!
+  id: Int!
+  title: String
+
+  # Reads and enables pagination through a set of `Venue`.
+  venuesByPlaylist(
+    # The method to use when ordering `Venue`.
+    orderBy: VenuesOrderBy = PRIMARY_KEY_ASC
+
+    # Read all values in the set before (above) this cursor.
+    before: Cursor
+
+    # Read all values in the set after (below) this cursor.
+    after: Cursor
+
+    # Only read the first `n` values of the set.
+    first: Int
+
+    # Only read the last `n` values of the set.
+    last: Int
+
+    # Skip the first `n` values from our `after` cursor, an alternative to cursor
+    # based pagination. May not be used with `last`.
+    offset: Int
+
+    # A condition to be used in determining which values should be returned by the collection.
+    condition: VenueCondition
+  ): VenuesConnection
+
+  # Reads and enables pagination through a set of `PlaylistSong`.
+  playlistSongsByPlaylistId(
+    # The method to use when ordering `PlaylistSong`.
+    orderBy: PlaylistSongsOrderBy = PRIMARY_KEY_ASC
+
+    # Read all values in the set before (above) this cursor.
+    before: Cursor
+
+    # Read all values in the set after (below) this cursor.
+    after: Cursor
+
+    # Only read the first `n` values of the set.
+    first: Int
+
+    # Only read the last `n` values of the set.
+    last: Int
+
+    # Skip the first `n` values from our `after` cursor, an alternative to cursor
+    # based pagination. May not be used with `last`.
+    offset: Int
+
+    # A condition to be used in determining which values should be returned by the collection.
+    condition: PlaylistSongCondition
+  ): PlaylistSongsConnection
+}
+
+# A condition to be used against `Playlist` object types. All fields are tested
+# for equality and combined with a logical ‘and.’
+input PlaylistCondition {
+  # Checks for equality with the object’s `id` field.
+  id: Int
+
+  # Checks for equality with the object’s `title` field.
+  title: String
+}
+
+input PlaylistInput {
+  id: Int
+  title: String
+}
+
+# Represents an update to a `Playlist`. Fields that are set will be updated.
+input PlaylistPatch {
+  id: Int
+  title: String
+}
+
+# A connection to a list of `Playlist` values.
+type PlaylistsConnection {
+  # Information to aid in pagination.
+  pageInfo: PageInfo!
+
+  # The count of *all* `Playlist` you could get from the connection.
+  totalCount: Int
+
+  # A list of edges which contains the `Playlist` and cursor to aid in pagination.
+  edges: [PlaylistsEdge]
+
+  # A list of `Playlist` objects.
+  nodes: [Playlist!]
+}
+
+# A `Playlist` edge in the connection.
+type PlaylistsEdge {
+  # A cursor for use in pagination.
+  cursor: Cursor
+
+  # The `Playlist` at the end of the edge.
+  node: Playlist!
+}
+
+type PlaylistSong implements Node {
+  # A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  nodeId: ID!
+  playlistId: Int!
+  songId: Int!
+
+  # Reads a single `Playlist` that is related to this `PlaylistSong`.
+  playlistByPlaylistId: Playlist
+
+  # Reads a single `Song` that is related to this `PlaylistSong`.
+  songBySongId: Song
+}
+
+# A condition to be used against `PlaylistSong` object types. All fields are
+# tested for equality and combined with a logical ‘and.’
+input PlaylistSongCondition {
+  # Checks for equality with the object’s `playlistId` field.
+  playlistId: Int
+
+  # Checks for equality with the object’s `songId` field.
+  songId: Int
+}
+
+input PlaylistSongInput {
+  playlistId: Int!
+  songId: Int!
+}
+
+# Represents an update to a `PlaylistSong`. Fields that are set will be updated.
+input PlaylistSongPatch {
+  playlistId: Int
+  songId: Int
+}
+
+# A connection to a list of `PlaylistSong` values.
+type PlaylistSongsConnection {
+  # Information to aid in pagination.
+  pageInfo: PageInfo!
+
+  # The count of *all* `PlaylistSong` you could get from the connection.
+  totalCount: Int
+
+  # A list of edges which contains the `PlaylistSong` and cursor to aid in pagination.
+  edges: [PlaylistSongsEdge]
+
+  # A list of `PlaylistSong` objects.
+  nodes: [PlaylistSong!]
+}
+
+# A `PlaylistSong` edge in the connection.
+type PlaylistSongsEdge {
+  # A cursor for use in pagination.
+  cursor: Cursor
+
+  # The `PlaylistSong` at the end of the edge.
+  node: PlaylistSong!
+}
+
+# Methods to use when ordering `PlaylistSong`.
+enum PlaylistSongsOrderBy {
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+  NATURAL
+  PLAYLIST_ID_ASC
+  PLAYLIST_ID_DESC
+  SONG_ID_ASC
+  SONG_ID_DESC
+}
+
+# Methods to use when ordering `Playlist`.
+enum PlaylistsOrderBy {
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+  NATURAL
+  ID_ASC
+  ID_DESC
+  TITLE_ASC
+  TITLE_DESC
+}
+
+# The root query type which gives access points into the data universe.
+type Query implements Node {
+  # Fetches an object given its globally unique `ID`.
+  node(
+    # The globally unique `ID`.
+    nodeId: ID!
+  ): Node
+
+  # Reads and enables pagination through a set of `Dj`.
+  allDjs(
+    # The method to use when ordering `Dj`.
+    orderBy: DjsOrderBy = PRIMARY_KEY_ASC
+
+    # Read all values in the set before (above) this cursor.
+    before: Cursor
+
+    # Read all values in the set after (below) this cursor.
+    after: Cursor
+
+    # Only read the first `n` values of the set.
+    first: Int
+
+    # Only read the last `n` values of the set.
+    last: Int
+
+    # Skip the first `n` values from our `after` cursor, an alternative to cursor
+    # based pagination. May not be used with `last`.
+    offset: Int
+
+    # A condition to be used in determining which values should be returned by the collection.
+    condition: DjCondition
+  ): DjsConnection
+
+  # Reads a single `Dj` using its globally unique `ID`.
+  dj(
+    # The globally unique `ID` to be used in selecting a single `Dj`.
+    nodeId: ID!
+  ): Dj
+  djById(id: Int!): Dj
+  djByNick(nick: String!): Dj
+  djByEmail(email: String!): Dj
+
+  # Reads and enables pagination through a set of `Playlist`.
+  allPlaylists(
+    # The method to use when ordering `Playlist`.
+    orderBy: PlaylistsOrderBy = PRIMARY_KEY_ASC
+
+    # Read all values in the set before (above) this cursor.
+    before: Cursor
+
+    # Read all values in the set after (below) this cursor.
+    after: Cursor
+
+    # Only read the first `n` values of the set.
+    first: Int
+
+    # Only read the last `n` values of the set.
+    last: Int
+
+    # Skip the first `n` values from our `after` cursor, an alternative to cursor
+    # based pagination. May not be used with `last`.
+    offset: Int
+
+    # A condition to be used in determining which values should be returned by the collection.
+    condition: PlaylistCondition
+  ): PlaylistsConnection
+
+  # Reads a single `Playlist` using its globally unique `ID`.
+  playlist(
+    # The globally unique `ID` to be used in selecting a single `Playlist`.
+    nodeId: ID!
+  ): Playlist
+  playlistById(id: Int!): Playlist
+
+  # Reads and enables pagination through a set of `PlaylistSong`.
+  allPlaylistSongs(
+    # The method to use when ordering `PlaylistSong`.
+    orderBy: PlaylistSongsOrderBy = PRIMARY_KEY_ASC
+
+    # Read all values in the set before (above) this cursor.
+    before: Cursor
+
+    # Read all values in the set after (below) this cursor.
+    after: Cursor
+
+    # Only read the first `n` values of the set.
+    first: Int
+
+    # Only read the last `n` values of the set.
+    last: Int
+
+    # Skip the first `n` values from our `after` cursor, an alternative to cursor
+    # based pagination. May not be used with `last`.
+    offset: Int
+
+    # A condition to be used in determining which values should be returned by the collection.
+    condition: PlaylistSongCondition
+  ): PlaylistSongsConnection
+
+  # Reads a single `PlaylistSong` using its globally unique `ID`.
+  playlistSong(
+    # The globally unique `ID` to be used in selecting a single `PlaylistSong`.
+    nodeId: ID!
+  ): PlaylistSong
+  playlistSongByPlaylistIdAndSongId(playlistId: Int!, songId: Int!): PlaylistSong
+
+  # Reads and enables pagination through a set of `Song`.
+  allSongs(
+    # The method to use when ordering `Song`.
+    orderBy: SongsOrderBy = PRIMARY_KEY_ASC
+
+    # Read all values in the set before (above) this cursor.
+    before: Cursor
+
+    # Read all values in the set after (below) this cursor.
+    after: Cursor
+
+    # Only read the first `n` values of the set.
+    first: Int
+
+    # Only read the last `n` values of the set.
+    last: Int
+
+    # Skip the first `n` values from our `after` cursor, an alternative to cursor
+    # based pagination. May not be used with `last`.
+    offset: Int
+
+    # A condition to be used in determining which values should be returned by the collection.
+    condition: SongCondition
+  ): SongsConnection
+
+  # Reads a single `Song` using its globally unique `ID`.
+  song(
+    # The globally unique `ID` to be used in selecting a single `Song`.
+    nodeId: ID!
+  ): Song
+  songById(id: Int!): Song
+
+  # Reads and enables pagination through a set of `Venue`.
+  allVenues(
+    # The method to use when ordering `Venue`.
+    orderBy: VenuesOrderBy = PRIMARY_KEY_ASC
+
+    # Read all values in the set before (above) this cursor.
+    before: Cursor
+
+    # Read all values in the set after (below) this cursor.
+    after: Cursor
+
+    # Only read the first `n` values of the set.
+    first: Int
+
+    # Only read the last `n` values of the set.
+    last: Int
+
+    # Skip the first `n` values from our `after` cursor, an alternative to cursor
+    # based pagination. May not be used with `last`.
+    offset: Int
+
+    # A condition to be used in determining which values should be returned by the collection.
+    condition: VenueCondition
+  ): VenuesConnection
+
+  # Reads a single `Venue` using its globally unique `ID`.
+  venue(
+    # The globally unique `ID` to be used in selecting a single `Venue`.
+    nodeId: ID!
+  ): Venue
+  venueById(id: Int!): Venue
+
+  # Exposes the root query type nested one level down. This is helpful for Relay 1
+  # which can only query top level fields if they are in a particular form.
+  query: Query!
+
+  # The root query type must be a `Node` to work well with Relay 1 mutations. This just resolves to `query`.
+  nodeId: ID!
+}
+
+type Song implements Node {
+  # A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  nodeId: ID!
+  id: Int!
+  title: String!
+  url: String!
+
+  # Reads and enables pagination through a set of `PlaylistSong`.
+  playlistSongsBySongId(
+    # The method to use when ordering `PlaylistSong`.
+    orderBy: PlaylistSongsOrderBy = PRIMARY_KEY_ASC
+
+    # Read all values in the set before (above) this cursor.
+    before: Cursor
+
+    # Read all values in the set after (below) this cursor.
+    after: Cursor
+
+    # Only read the first `n` values of the set.
+    first: Int
+
+    # Only read the last `n` values of the set.
+    last: Int
+
+    # Skip the first `n` values from our `after` cursor, an alternative to cursor
+    # based pagination. May not be used with `last`.
+    offset: Int
+
+    # A condition to be used in determining which values should be returned by the collection.
+    condition: PlaylistSongCondition
+  ): PlaylistSongsConnection
+}
+
+# A condition to be used against `Song` object types. All fields are tested for equality and combined with a logical ‘and.’
+input SongCondition {
+  # Checks for equality with the object’s `id` field.
+  id: Int
+
+  # Checks for equality with the object’s `title` field.
+  title: String
+
+  # Checks for equality with the object’s `url` field.
+  url: String
+}
+
+input SongInput {
+  id: Int
+  title: String!
+  url: String!
+}
+
+# Represents an update to a `Song`. Fields that are set will be updated.
+input SongPatch {
+  id: Int
+  title: String
+  url: String
+}
+
+# A connection to a list of `Song` values.
+type SongsConnection {
+  # Information to aid in pagination.
+  pageInfo: PageInfo!
+
+  # The count of *all* `Song` you could get from the connection.
+  totalCount: Int
+
+  # A list of edges which contains the `Song` and cursor to aid in pagination.
+  edges: [SongsEdge]
+
+  # A list of `Song` objects.
+  nodes: [Song!]
+}
+
+# A `Song` edge in the connection.
+type SongsEdge {
+  # A cursor for use in pagination.
+  cursor: Cursor
+
+  # The `Song` at the end of the edge.
+  node: Song!
+}
+
+# Methods to use when ordering `Song`.
+enum SongsOrderBy {
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+  NATURAL
+  ID_ASC
+  ID_DESC
+  TITLE_ASC
+  TITLE_DESC
+  URL_ASC
+  URL_DESC
+}
+
+# All input for the `updateDjByEmail` mutation.
+input UpdateDjByEmailInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+  email: String!
+
+  # An object where the defined keys will be set on the `Dj` identified by our unique key.
+  djPatch: DjPatch!
+}
+
+# All input for the `updateDjById` mutation.
+input UpdateDjByIdInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+  id: Int!
+
+  # An object where the defined keys will be set on the `Dj` identified by our unique key.
+  djPatch: DjPatch!
+}
+
+# All input for the `updateDjByNick` mutation.
+input UpdateDjByNickInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+  nick: String!
+
+  # An object where the defined keys will be set on the `Dj` identified by our unique key.
+  djPatch: DjPatch!
+}
+
+# All input for the `updateDj` mutation.
+input UpdateDjInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+
+  # The globally unique `ID` which will identify a single `Dj` to be updated.
+  nodeId: ID!
+
+  # An object where the defined keys will be set on the `Dj` identified by our globally unique `ID`.
+  djPatch: DjPatch!
+}
+
+# The output of our `updateDj` mutation.
+type UpdateDjPayload {
+  # The exact same `clientMutationId` that was provided in the mutation input,
+  # unchanged and unused. May be used by a client to track mutations.
+  clientMutationId: String
+  dj: Dj
+
+  # Our root query field type. Allows us to run any query from our mutation payload.
+  query: Query
+}
+
+# All input for the `updatePlaylistById` mutation.
+input UpdatePlaylistByIdInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+  id: Int!
+
+  # An object where the defined keys will be set on the `Playlist` identified by our unique key.
+  playlistPatch: PlaylistPatch!
+}
+
+# All input for the `updatePlaylist` mutation.
+input UpdatePlaylistInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+
+  # The globally unique `ID` which will identify a single `Playlist` to be updated.
+  nodeId: ID!
+
+  # An object where the defined keys will be set on the `Playlist` identified by our globally unique `ID`.
+  playlistPatch: PlaylistPatch!
+}
+
+# The output of our `updatePlaylist` mutation.
+type UpdatePlaylistPayload {
+  # The exact same `clientMutationId` that was provided in the mutation input,
+  # unchanged and unused. May be used by a client to track mutations.
+  clientMutationId: String
+  playlist: Playlist
+
+  # Our root query field type. Allows us to run any query from our mutation payload.
+  query: Query
+}
+
+# All input for the `updatePlaylistSongByPlaylistIdAndSongId` mutation.
+input UpdatePlaylistSongByPlaylistIdAndSongIdInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+  playlistId: Int!
+  songId: Int!
+
+  # An object where the defined keys will be set on the `PlaylistSong` identified by our unique key.
+  playlistSongPatch: PlaylistSongPatch!
+}
+
+# All input for the `updatePlaylistSong` mutation.
+input UpdatePlaylistSongInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+
+  # The globally unique `ID` which will identify a single `PlaylistSong` to be updated.
+  nodeId: ID!
+
+  # An object where the defined keys will be set on the `PlaylistSong` identified by our globally unique `ID`.
+  playlistSongPatch: PlaylistSongPatch!
+}
+
+# The output of our `updatePlaylistSong` mutation.
+type UpdatePlaylistSongPayload {
+  # The exact same `clientMutationId` that was provided in the mutation input,
+  # unchanged and unused. May be used by a client to track mutations.
+  clientMutationId: String
+  playlistSong: PlaylistSong
+
+  # Reads a single `Playlist` that is related to this `PlaylistSong`.
+  playlistByPlaylistId: Playlist
+
+  # Reads a single `Song` that is related to this `PlaylistSong`.
+  songBySongId: Song
+
+  # Our root query field type. Allows us to run any query from our mutation payload.
+  query: Query
+}
+
+# All input for the `updateSongById` mutation.
+input UpdateSongByIdInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+  id: Int!
+
+  # An object where the defined keys will be set on the `Song` identified by our unique key.
+  songPatch: SongPatch!
+}
+
+# All input for the `updateSong` mutation.
+input UpdateSongInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+
+  # The globally unique `ID` which will identify a single `Song` to be updated.
+  nodeId: ID!
+
+  # An object where the defined keys will be set on the `Song` identified by our globally unique `ID`.
+  songPatch: SongPatch!
+}
+
+# The output of our `updateSong` mutation.
+type UpdateSongPayload {
+  # The exact same `clientMutationId` that was provided in the mutation input,
+  # unchanged and unused. May be used by a client to track mutations.
+  clientMutationId: String
+  song: Song
+
+  # Our root query field type. Allows us to run any query from our mutation payload.
+  query: Query
+}
+
+# All input for the `updateVenueById` mutation.
+input UpdateVenueByIdInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+  id: Int!
+
+  # An object where the defined keys will be set on the `Venue` identified by our unique key.
+  venuePatch: VenuePatch!
+}
+
+# All input for the `updateVenue` mutation.
+input UpdateVenueInput {
+  # An arbitrary string value with no semantic meaning. Will be included in the
+  # payload verbatim. May be used to track mutations by the client.
+  clientMutationId: String
+
+  # The globally unique `ID` which will identify a single `Venue` to be updated.
+  nodeId: ID!
+
+  # An object where the defined keys will be set on the `Venue` identified by our globally unique `ID`.
+  venuePatch: VenuePatch!
+}
+
+# The output of our `updateVenue` mutation.
+type UpdateVenuePayload {
+  # The exact same `clientMutationId` that was provided in the mutation input,
+  # unchanged and unused. May be used by a client to track mutations.
+  clientMutationId: String
+  venue: Venue
+
+  # Reads a single `Playlist` that is related to this `Venue`.
+  playlistByPlaylist: Playlist
+
+  # Our root query field type. Allows us to run any query from our mutation payload.
+  query: Query
+}
+
+type Venue implements Node {
+  # A globally unique identifier. Can be used in various places throughout the system to identify this single value.
+  nodeId: ID!
+  id: Int!
+  name: String!
+  playlist: Int
+
+  # Reads a single `Playlist` that is related to this `Venue`.
+  playlistByPlaylist: Playlist
+}
+
+# A condition to be used against `Venue` object types. All fields are tested for equality and combined with a logical ‘and.’
+input VenueCondition {
+  # Checks for equality with the object’s `id` field.
+  id: Int
+
+  # Checks for equality with the object’s `name` field.
+  name: String
+
+  # Checks for equality with the object’s `playlist` field.
+  playlist: Int
+}
+
+input VenueInput {
+  id: Int
+  name: String!
+  playlist: Int
+}
+
+# Represents an update to a `Venue`. Fields that are set will be updated.
+input VenuePatch {
+  id: Int
+  name: String
+  playlist: Int
+}
+
+# A connection to a list of `Venue` values.
+type VenuesConnection {
+  # Information to aid in pagination.
+  pageInfo: PageInfo!
+
+  # The count of *all* `Venue` you could get from the connection.
+  totalCount: Int
+
+  # A list of edges which contains the `Venue` and cursor to aid in pagination.
+  edges: [VenuesEdge]
+
+  # A list of `Venue` objects.
+  nodes: [Venue!]
+}
+
+# A `Venue` edge in the connection.
+type VenuesEdge {
+  # A cursor for use in pagination.
+  cursor: Cursor
+
+  # The `Venue` at the end of the edge.
+  node: Venue!
+}
+
+# Methods to use when ordering `Venue`.
+enum VenuesOrderBy {
+  PRIMARY_KEY_ASC
+  PRIMARY_KEY_DESC
+  NATURAL
+  ID_ASC
+  ID_DESC
+  NAME_ASC
+  NAME_DESC
+  PLAYLIST_ASC
+  PLAYLIST_DESC
+}

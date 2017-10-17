@@ -9,7 +9,8 @@ import {
 	QueryRenderer,
 	graphql
 } from 'react-relay'
-import { Text } from 'react-native'
+
+import VenueContainer from './Containers/VenueContainer'
 
 // Define a function that fetches the results of an operation (query/mutation/etc)
 // and returns its results as a Promise:
@@ -19,7 +20,7 @@ function fetchQuery(
 		cacheConfig,
 		uploadables,
 	) {
-		return fetch('http://192.168.1.140:5000/graphql', {
+		return fetch('http://localhost:5000/graphql', {
 			method: 'POST',
 			headers: {
 				// Add authentication and other headers here
@@ -33,7 +34,7 @@ function fetchQuery(
 			return response.json();
 		});
 	}
-	
+
 	const source = new RecordSource()
 	const store = new Store(source)
 	const network = Network.create(fetchQuery)
@@ -54,35 +55,26 @@ export default class RootContainer extends Component {
 				query={ graphql`
 					query RootContainerQuery {
 						allVenues {
-							edges {
-								node {
-									name
-									playlist: playlistByPlaylist {
-										title
-										songs: playlistSongsByPlaylistId {
-											edges {
-												node {
-													songBySongId {
-														title
-													}
-												}
-											}
-										}
-									}
-								}
+							nodes {
+								...VenueContainer_venue
 							}
 						}
 					}
 				`}
 				variables={{}}
 				render={({error, props}) => {
-					console.log('props', props)
 					if (error) {
-						return <Text>{error.message}</Text>
+						return <p>{error.message}</p>
 					} else if (props) {
-						return <Text>{props.allVenues[0].name}</Text>
+						return <div>
+							{
+								props.allVenues.nodes.map(venue =>
+									<VenueContainer key={venue.name} venue={venue}/>
+								)
+							}
+						</div>
 					}
-					return <Text>Loading...</Text>
+					return <p>Loading...</p>
 				}
 				}
 			/>
